@@ -1,0 +1,40 @@
+{
+    "models": {
+        "mode": "replace",
+        "providers": {
+            "ppio": {
+                "baseUrl": "https://api.ppio.com/anthropic",
+                "apiKey": "PPIO_API_KEY",
+                "api": "anthropic-messages",
+                "models": [
+                    {
+                        "id": "minimax/minimax-m2.5-highspeed",
+                        "name": "PPIO/Minimax M2.5",
+                        "reasoning": true,
+                        "input": [
+                            "text"
+                        ],
+                        "cost": {
+                            "input": 0,
+                            "output": 0,
+                            "cacheRead": 0,
+                            "cacheWrite": 0
+                        },
+                        "contextWindow": 200000,
+                        "maxTokens": 50000
+                    }
+                ]
+            }
+        }
+    },
+    "agents": {
+        "defaults": {
+            "model": {
+                "primary": "ppio/minimax/minimax-m2.5-highspeed"
+            },
+            "models": {
+                "ppio/minimax/minimax-m2.5-highspeed": {}
+            }
+        }
+    }
+}
